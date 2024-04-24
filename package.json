@@ -1,0 +1,20 @@
+{
+  "name": "realtime-pizza",
+  "version": "1.0.0",
+  "description": "This is our realtime pizza tracking app",
+  "main": "index.js",
+  "author": "priyanka yadav",
+  "scripts": {
+    "serve": "node server.js",
+    "dev" : "nodemon server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-ejs-layouts": "^2.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
