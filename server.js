@@ -1,7 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
+const MongoStore = require('connect-mongo')
+const passport = require('passport')
 const express = require('express');
 const session = require('express-session');
-const MongoStore = require('connect-mongo');
 require('dotenv').config();
 
 // databse connection
@@ -32,7 +33,8 @@ const mongoStore = MongoStore.create({
     collectionName: 'sessions' // collection where sessions will be stored
 });
 
-// session config
+
+// express-session middleware 
 app.use(session({
     secret: process.env.COOKIE_SECRET,
     resave: false,
@@ -41,15 +43,23 @@ app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 * 24 } // session  for 24hrs
 }));
 
+// Passport config
+const passportInit = require('./app/config/passport')
+passportInit(passport)
+app.use(passport.initialize());
+app.use(passport.session());
+  
 app.use(flash());
 
 // Assets 
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false}))
 app.use(express.json())
 
 // Global middleware
 app.use((req, res, next) => {
     res.locals.session = req.session
+    res.locals.user = req.user
     next()
 })
 
