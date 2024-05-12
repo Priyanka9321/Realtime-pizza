@@ -36,44 +36,6 @@ This project is a realtime online pizza ordering application built with Node.js,
 - **ES6**: Modern JavaScript features for development
 - **SCSS**: CSS preprocessor for enhanced styling capabilities
 
-## Folder Structure
-
-├── config/
-│   ├── passport.js         # Passport authentication configuration
-│   └── ...
-├── controllers/
-│   ├── authController.js   # Controller for authentication routes
-│   ├── cartController.js   # Controller for shopping cart functionality
-│   └── ...
-├── models/
-│   ├── User.js             # User model definition
-│   ├── Pizza.js            # Pizza model definition
-│   └── ...
-├── public/
-│   ├── css/                # Compiled CSS files (Tailwind CSS + SCSS)
-│   ├── js/                 # Frontend JavaScript files
-│   └── ...
-├── routes/
-│   ├── authRoutes.js       # Routes for authentication
-│   ├── cartRoutes.js       # Routes for shopping cart
-│   └── ...
-├── services/
-│   ├── authService.js      # Authentication service functions
-│   ├── cartService.js      # Shopping cart service functions
-│   └── ...
-├── views/
-│   ├── auth/
-│   │   ├── login.ejs       # Login page template
-│   │   └── register.ejs    # Register page template
-│   ├── cart.ejs            # Shopping cart page template
-│   ├── home.ejs            # Home page template
-│   └── ...
-├── .env                    # Environment variables configuration
-├── app.js                  # Express application setup
-├── server.js               # Server entry point
-└── README.md               # Project documentation
-
-
 ## Getting Started
 
 1. **Setup**
